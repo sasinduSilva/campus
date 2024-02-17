@@ -7,6 +7,7 @@ export async function DELETE(
     {params} : {params:{courseId: string, attachmentId: string}}) 
 {
         try {
+            console.log("delete called");
             const {userId} = auth(); 
             
             if(!userId){
@@ -30,6 +31,8 @@ export async function DELETE(
                     id: params.attachmentId
                 }
             });
+
+            
 
             return NextResponse.json(attachement);
 
